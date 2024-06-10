@@ -1,0 +1,346 @@
+.pop-up-container {
+  z-index: 997;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-in-out, visibility 0s 0.2s;
+}
+.pop-up-container.show {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease-in-out, visibility 0s;
+}
+
+.pop-up-container .blurred-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: -997;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: #ffffff87;
+  width: 100vw;
+  height: 100vh;
+}
+
+.pop-up-container h2 {
+  font-size: 40px;
+}
+
+.pop-up-container .text-container {
+  padding: 10px;
+}
+
+.pop-up-container .close-pop-up {
+  position: absolute;
+  z-index: 998;
+  top: 17vh;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+  border: 3px solid var(--primary-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+}
+.pop-up-container .close-pop-up:hover {
+  background: none;
+  border: 4px solid var(--primary-color);
+  scale: 1.08;
+}
+.pop-up-container .close-icon {
+  text-align: center;
+  line-height: 0;
+  letter-spacing: 0em;
+  font-size: 22px;
+  color: var(--secondary-color);
+  transition: all ease-in-out 0.3s;
+}
+.pop-up-container .close-pop-up:hover .close-icon {
+  color: var(--primary-color);
+  scale: 1.2;
+}
+
+.pop-up-container .citron {
+  position: absolute;
+  z-index: 999;
+  bottom: 17vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  animation: floatingPomme 3s ease-in-out infinite;
+}
+@keyframes floatingPomme {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateX(-50%) translateY(4px) rotate(5deg);
+    }
+}
+
+
+
+.sign-pop-up-container {
+  z-index: 998;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.199);
+  padding: 50px 30px;
+  border-radius: 10px 120px 10px 120px;
+  border: 2px solid var(--primary-color);
+  min-width: 800px;
+  max-width: 1000px;
+  min-height: 500px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background-color: #ffffff59;
+  overflow: hidden;
+}
+
+.sign-pop-up-container .form {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  padding: 0 20px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blur-color);
+  transition: 0.3s ease-in-out transform;
+  overflow: hidden;
+}
+
+.sign-pop-up-container .form.sign-in-form {
+  left: 0;
+}
+
+.sign-pop-up-container .form.sign-up-form {
+  right: 0;
+}
+
+.sign-pop-up-container .form .wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out transform;
+}
+
+.sign-pop-up-container .form.sign-in-form .wrapper {
+  transform: translateX(100%);
+}
+
+.sign-pop-up-container .sign-in-form.active .wrapper {
+  transform: translateX(0);
+}
+
+.sign-pop-up-container .form.sign-up-form .wrapper {
+  transform: translateX(-100%);
+}
+
+.sign-pop-up-container .sign-up-form.active .wrapper {
+  transform: translateX(0);
+}
+
+.sign-pop-up-container .form h2 {
+  margin-bottom: 10px;
+}
+
+.sign-pop-up-container .form p {
+  line-height: 25px;
+  margin-bottom: 30px;
+}
+
+.sign-pop-up-container .form input {
+  width: 300px;
+  margin-bottom: 15px;
+  height: 35px;
+  padding-left: 15px;
+  border: none;
+  outline: none;
+}
+
+.sign-pop-up-container .form input::placeholder {
+  color: rgba(0, 0, 0, 0.658);
+}
+
+.sign-pop-up-container .overlay-sign-pop-up-container {
+  position: absolute;
+  background-color: var(--primary-color);
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: 0.3s ease-in-out transform;
+}
+
+.sign-pop-up-container .overlay-sign-pop-up-container .overlay {
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  left: 0%;
+  width: 200%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: 0.3s ease-in-out transform;
+  z-index: 1;
+}
+
+.sign-pop-up-container .overlay::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--primary-color);
+  z-index: -1;
+}
+
+.overlay-sign-pop-up-container .overlay .overlay-left,
+.overlay-sign-pop-up-container .overlay .overlay-right {
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.overlay-sign-pop-up-container .overlay button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  margin-top: 20px;
+}
+.overlay-sign-pop-up-container .overlay button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .pop-up-container h2 {
+    font-size: 1.7rem;
+  }
+
+  .sign-pop-up-container {
+    min-width: 90vw;
+    width: 90vw;
+    height: 60vh;
+    border-radius: 5px 110px 5px 110px;
+    display: flex;
+    align-items: flex-start;
+    justify-items: start;
+    padding: 20px;
+  }
+
+  .pop-up-container .text-container {
+    margin-top: 20px;
+  }
+
+  .sign-pop-up-container .form {
+    width: 100%;
+  }
+
+  .sign-pop-up-container .form .wrapper {
+    align-items: start;
+  }
+
+  .pop-up-container .close-pop-up {
+    z-index: 999;
+    width: 35px;
+    height: 35px;
+    top: 19vh;
+    right: 5vw;
+  }
+  .pop-up-container .close-pop-up:hover {
+    scale: 1.08;
+  }
+
+  .pop-up-container .close-icon {
+    font-size: 15px;
+  }
+  .pop-up-container .close-pop-up:hover .close-icon {
+    scale: 1.2;
+  }
+
+  .pop-up-container .citron {
+    width: 90px;
+    top: 12vh;
+  }
+
+
+
+
+
+  .sign-pop-up-container .form {
+    position: initial; /* ACTIVATION COTÉ DROIT SUR SMARTPHONE*/
+  }
+
+  .sign-pop-up-container .overlay-sign-pop-up-container {
+    position: absolute;
+    background-color: var(--primary-color);
+    left: 0;
+    top: 80%;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: 0.3s ease-in-out transform;
+  }
+
+  .sign-pop-up-container .overlay-sign-pop-up-container .overlay {
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    left: 0%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    width: 200%;
+    transition: 0.3s ease-in-out transform;
+    z-index: 1;
+  }
+
+  .sign-pop-up-container .overlay::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 200%;
+    left: 0;
+    top: 0;
+    background-color: var(--primary-color);
+    z-index: -1;
+  }
+
+  .overlay-sign-pop-up-container .overlay .overlay-left,
+  .overlay-sign-pop-up-container .overlay .overlay-right {
+    flex-basis: 100%;
+    text-align: center;
+  }
+
+  .overlay-sign-pop-up-container .overlay .overlay-right {
+    flex-basis: 100%;
+  }
+
+  .overlay-sign-pop-up-container .overlay button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    margin-top: 30px;
+  }
+}

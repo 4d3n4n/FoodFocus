@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>{% block title %}Food Focus{% endblock %}</title>
+
+		<!--FONT-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&family=Quicksand:wght@300;400;500;600;700&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+		<!-- FAVICON -->
+		<link rel="shortcut icon" href="{{ asset('img/favicon.png')}}" type="image/x-icon">
+		<!-- iPhone Retina Bookmark Icon -->
+		<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('img/favicon-apple.png')}}">
+		<!-- iPad Retina Bookmark Icon -->
+		<link rel="apple-touch-icon" sizes="152x152" href="{{ asset('img/favicon-apple.png')}}">
+		<!-- iPhone X Retina Bookmark Icon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon-apple.png')}}">
+		<!-- Apple Safari Pinned Tab Icon -->
+		<link rel="mask-icon" href="{{ asset('img/favicon-apple.png')}}" color="#fff">
+		<!-- IOS APP LAUNCH -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-title" content="Food Focus">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<link rel="apple-touch-startup-image" href="{{ asset('img/favicon-apple.png')}}" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<!-- CSS -->
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset('/styles/app.css') }}">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+		{% endblock %}
+		
+		<!-- JS -->
+		{% block javascripts %}
+			<script src="{{ asset('homepage-js/homepage-loading-page.js') }}" defer></script>
+		{% endblock %}
+		
+	</head>
+	<body>
+		<!-- BG -->
+		<div class="bg bg1"></div>
+		<div class="bg bg2"></div>
+		<div class="bg bg3"></div>
+		<div class="bg bg4"></div>
+		<div class="body-blur">
+			<img class="bg-image" src="{{ asset('img/bg.png')}}" alt="">
+		</div>
+
+		<!-- Loading Page -->
+		<div class="loader">
+			<img src="{{ asset('img/logo.png')}}" alt="logo">
+			<div class="spinner"></div>
+			<p>Food focus</p>
+		</div>
+
+		{% block body %}
+			<!-- BODY BLOCKS OF OTHER PAGES -->
+		{% endblock %}
+
+		<footer>
+			<img class="logo-footer" src="{{ asset('img/white-logo.png')}}" alt="logo">
+			<div class="social-container">
+				<a href="https://www.instagram.com/" target="_blank">
+					<i class="fab fa-instagram"></i>
+				</a>
+				<a href="https://www.facebook.com/" target="_blank">
+					<i class="fab fa-facebook"></i>
+				</a>
+				<a href="https://www.youtube.com/" target="_blank">
+					<i class="fab fa-youtube"></i>
+				</a>
+				<a href="https://www.twitter.com/" target="_blank">
+					<i class="fab fa-twitter"></i>
+				</a>
+			</div>
+
+			<div class="conditions-container">
+				<a href="#">Contact</a>
+				<a href="#">L'histoire de Food Focus</a>
+				<a href="#">Conditions générales</a>
+				<a href="#">Politique de confidentialité</a>
+				<a href="#">Politique relative aux cookies</a>
+				<a href="#">Mentions légales</a>
+				<a href="#">Politique d'utilisation</a>
+			</div>
+			<p class="copyright">© 2024 Food Focus. Tous droits réservés.</p>
+		</footer>
+	</body>
+</html>

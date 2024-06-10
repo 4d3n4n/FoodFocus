@@ -1,0 +1,286 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('homepage-css/homepage.css') }}">
+	<link rel="stylesheet" href="{{ asset('homepage-css/sign-up.css') }}">
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+	<script src="{{ asset('homepage-js/homepage.js') }}" defer></script>
+    <script src="{{ asset('homepage-js/homepage-carousel.js') }}" defer></script>
+	<script src="{{ asset('homepage-js/homepage-q-a.js') }}" defer></script>
+	<script src="{{ asset('homepage-js/homepage-typing-animation.js') }}" defer></script>
+	<script src="{{ asset('homepage-js/homepage-sign-up.js') }}" defer></script>
+{% endblock %}
+
+
+{% block body %}
+<!-- HOMEPAGE -->
+
+	<img class="homme" src="{{ asset('img/homme.png') }}" alt="">
+
+	<header>
+		<div class="logo-container">
+			<a href="{{ url('app_homepage') }}">
+				<img class="logo" src="{{ asset('img/logo.png')}}" alt="logo">
+			</a>
+			<h1 class="brand-name">Food focus</h1>
+		</div>
+
+		<div class="log-in-container" id="log-in-container">
+			<i class="fa-solid fa-user"></i>
+		</div>
+
+		<div class="title-container">
+			<div class="animated-title-container">
+				<h2 class="animated-title" id="animated-title">Suivez, progressez,
+				</h2>
+				<h2 class="auto-type-container">_<span class="auto-type"></span>
+				</h2>
+			</div>
+			<p class="presentation">Votre partenaire santé ultime et smart. Calculez votre apport nutritionnel, suivez votre consommation, et progressez avec Food Focus. Vers une vie plus saine et équilibrée
+				<i class="fa-solid fa-apple-whole"></i>
+			</p>
+		</div>
+
+		<div class="icon-down-container">
+			<p class="cta-header">Rejoignez-nous et transformez votre approche de la nutrition
+				<i class="fa-solid fa-carrot"></i>
+			</p>
+			<a href="#functionality-section">
+				<i class="fa fa-angle-double-down scroll-down" aria-hidden="true"></i>
+			</a>
+		</div>
+	</header>
+
+	<main>
+		<div class="functionality-section" id="functionality-section">
+			<div class="imc-functionality-container functionality-container">
+				<img class="franboise functionality-aliment-icon" src="{{ asset('img/franboise.png')}}" alt="franboise">
+				<div class="imc-functionality-description functionality-description">
+					<h3>Calories? Comptées!</h3>
+					<p>Comme un jeu vidéo, mais pour vos calories ! Entrez vos stats, et on s'occupe du calcul.</p>
+				</div>
+			</div>
+
+			<div class="statistic-functionality-container functionality-container">
+				<img class="burger functionality-aliment-icon" src="{{ asset('img/burger.png')}}" alt="burger">
+				<div class="statistic-functionality-description functionality-description">
+					<h3>Retour Vers le Futur</h3>
+					<p>Voyagez dans le temps de vos habitudes alimentaires avec des stats de la semaine dernière à l'année dernière.</p>
+				</div>
+			</div>
+
+			<div class="suivi-functionality-container functionality-container">
+				<img class="salade functionality-aliment-icon" src="{{ asset('img/salade.png')}}" alt="salade">
+				<div class="suivi-functionality-description functionality-description">
+					<h3>L'Espion des Calories</h3>
+					<p>Suivez discrètement chaque bouchée et regardez les calories faire la danse du limbo.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="cible-container">
+			<h2 class="cible-title">Pensé pour</h2>
+			<div class="cible-carousel">
+				<div class="cible active">
+					<img class="altere cible-icon-scale" src="{{ asset('img/altere.png')}}" alt="altere">
+					<h3>Les Athlètes</h3>
+					<p>Maximisez votre potentiel avec une nutrition adaptée et un suivi de performance sur mesure.</p>
+				</div>
+				<div class="cible active-desktop">
+					<img class="balance cible-icon-scale" src="{{ asset('img/balance.png')}}" alt="balance">
+					<h3>La Perte de Poids</h3>
+					<p>Atteignez vos objectifs de minceur grâce à un suivi intelligent et personnalisé de votre régime.</p>
+				</div>
+				<div class="cible">
+					<img class="cook cible-icon-scale" src="{{ asset('img/cook.png')}}" alt="cook">
+					<h3>Le Suivi des Macros</h3>
+					<p>Équilibrez parfaitement vos repas en suivant les macros pour une alimentation saine et complète.</p>
+				</div>
+				<div class="cible">
+					<img class="graphic cible-icon-scale" src="{{ asset('img/graphic.png')}}" alt="graphic">
+					<h3>Le Contrôle Calorique</h3>
+					<p>Maitrisez votre consommation calorique avec facilité pour un bien-être quotidien amélioré.</p>
+				</div>
+				<div class="cible">
+					<img class="heart cible-icon-scale" src="{{ asset('img/heart.png')}}" alt="heart">
+					<h3>La Santé Chronique</h3>
+					<p>Gérez efficacement le diabète et le cholestérol grâce à un suivi précis et des conseils adaptés.</p>
+				</div>
+			</div>
+			<div class="cible-button-container">
+				<div class="cible-button prev" id="cible-button-prev">
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
+				</div>
+				<div class="cible-button next" id="cible-button-next">
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
+				</div>
+			</div>
+			<div class="icon-down-container">
+				<a href="#cta-sign-up-container">
+					<i class="fa fa-angle-double-down scroll-down" aria-hidden="true"></i>
+				</a>
+			</div>
+		</div>
+
+
+		<img class="femme" src="{{ asset('img/femme.png')}}" alt="">
+		<div class="cta-sign-up-container" id="cta-sign-up-container">
+			<img class="line-1" src="{{ asset('img/line_1.png')}}" alt="line-1">
+			<p>Prêt à prendre le contrôle de votre bien-être ? Ne manquez pas cette opportunité de transformer votre santé. Rejoignez notre communauté dès maintenant et commencez votre voyage vers une vie plus saine</p>
+			<button class="sign-up-button"><span>Inscris-toi</span><img class="white-logo" src="{{ asset('img/white-logo.png')}}" alt="white-logo"></button>
+			<img class="cta-line" src="{{ asset('img/cta_line.png')}}" alt="cta-line">
+			<img class="button-lines" src="{{ asset('img/button_icon.png')}}" alt="button-lines">
+		</div>
+
+
+		<div class="pop-up-container">
+            <div class="blurred-bg"></div>
+
+            <div class="close-pop-up">
+                <i class="fa-solid fa-xmark close-icon"></i>
+            </div>
+
+            <img class="citron" src="{{ asset('img/citron.png')}}" alt="citron">
+
+            <div class="sign-pop-up-container">
+                {# <div class="form sign-in-form">
+                    <div class="wrapper">
+                        <div class="text-container" action="#">
+                            <h2>Connexion</h2>
+                            <p>
+                                Utilisez votre Email et votre mot de passe pour vous
+                                connecter
+                            </p>
+                            <input type="email" placeholder="Email" />
+                            <input type="password" placeholder="Password" />
+                            <button type="submit">Re-bonjour !</button>
+                        </div>
+                    </div>
+                </div> #}
+				<div class="form sign-in-form">
+					<div class="wrapper">
+                        <div class="text-container">
+							<h2>Connexion</h2>
+							<p>Utilisez votre Email et votre mot de passe pour vous connecter</p>
+							
+							<form action="{{ path('app_login') }}" method="post">
+								<input type="email" name="email" placeholder="Email" required />
+								<input type="password" name="password" placeholder="Password" required />
+
+								{% for message in app.flashes('error') %}
+									<div class="alert alert-danger">
+										{{ message }}
+									</div>
+								{% endfor %}
+
+								<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+								<button type="submit">Re-bonjour !</button>
+							</form>
+
+						</div>
+					</div>
+				</div>
+
+				{# <div class="sign-pop-up-container">
+					<div class="form sign-in-form">
+						<div class="wrapper">
+							<div class="text-container">
+								<h2>Connexion</h2>
+								<p>Utilisez votre Email et votre mot de passe pour vous connecter</p>
+
+								<form method="post">
+									<input type="email" value="{{ last_username }}" name="email" placeholder="Email" id="inputEmail" class="form-control" autocomplete="email" required autofocus />
+									<input type="password" name="password" placeholder="Password" id="inputPassword" class="form-control" autocomplete="current-password" required />
+									{% for message in app.flashes('error') %}
+										<div class="alert alert-danger">
+											{{ message }}
+										</div>
+									{% endfor %}
+										<input type="hidden" name="_csrf_token"
+										value="{{ csrf_token('authenticate') }}">
+									<button type="submit">Re-bonjour !</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div> #}
+
+
+                <div class="form sign-up-form active">
+                    <div class="wrapper">
+                        <div class="text-container" action="#">
+                            <h2>Créer un compte</h2>
+                            <p>
+                                Veuillez remplir les informations nécessaire a la création de
+                                votre compte
+                            </p>
+                            {# <input type="text" placeholder="Nom" /> #}
+                            <input type="email" placeholder="Email" />
+                            <input type="password" placeholder="Mot de passe" />
+                            <button type="submit">Go !</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="overlay-sign-pop-up-container">
+                    <div class="overlay">
+                        <div class="overlay-left">
+                            <button id="signInButton">Connexion</button>
+                        </div>
+                        <div class="overlay-right">
+                            <button id="signUpButton">Créer un compte</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+		<div class="q-a">
+			<h2 class="q-a-title">Faq</h2>
+			<ul>
+				<li>
+					<div class="question-container">
+						<h4 class="question">L'application est gratuite ?</h4>
+						<i class="fa-solid fa-circle-chevron-down"></i>
+					</div>
+					<div class="reponse-container">
+						<p class="reponse">Absolument ! C'est comme trouver une barre de chocolat dans votre poche, mais sans les calories !</p>
+					</div>
+				</li>
+				<li>
+					<div class="question-container">
+						<h4 class="question">Comment fonctionne Food Focus ?</h4>
+						<i class="fa-solid fa-circle-chevron-down"></i>
+					</div>
+					<div class="reponse-container">
+						<p class="reponse">Comme un chef cuisinier pour vos données nutritionnelles ! Calculez vos calories, notez vos aliments, et surveillez votre apport en lipides, protéines et glucides. C'est comme avoir un nutritionniste de poche !</p>
+					</div>
+				</li>
+				<li>
+					<div class="question-container">
+						<h4 class="question">Puis-je utiliser Food Focus pour perdre du poids ?</h4>
+						<i class="fa-solid fa-circle-chevron-down"></i>
+					</div>
+					<div class="reponse-container">
+						<p class="reponse">Bien sûr ! 'Brand' est comme votre coach personnel pour dire "non" à cette part supplémentaire de gâteau et "oui" à un mode de vie plus sain.</p>
+					</div>
+				</li>
+				<li>
+					<div class="question-container">
+						<h4 class="question">Food Focus est-elle adaptée aux sportifs ?</h4>
+						<i class="fa-solid fa-circle-chevron-down"></i>
+					</div>
+					<div class="reponse-container">
+						<p class="reponse">out à fait ! Que vous soyez un sprinter ou un marathonien du canapé, 'brand' vous aide à garder une longueur d'avance sur vos besoins nutritionnels.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</main>
+{% endblock %}
